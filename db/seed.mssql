@@ -1,0 +1,4 @@
+
+INSERT INTO burgers (burger_name) VALUES ('Bandera');
+INSERT INTO burgers (burger_name) VALUES ('Peppermint Stick');
+INSERT INTO burgers (burger_name) VALUES ('Culvers');
