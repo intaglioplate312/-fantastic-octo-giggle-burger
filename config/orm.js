@@ -15,27 +15,45 @@ var orm = {
             cb(result);
         });
     },
-
-
-
-
     //  Create new table item
-    insertOne: function(whatToSelect, table, orderCol) {
-        var queryString = "SELECT ?? FROM ?? ORDER BY ?? DESC";
+    insertOne: function(table, cols, vals, cb) {
+        var queryString = "INSERT INTO " + table;
+
+        queryString += " (";
+        queryString += cols.toString();
+        queryString += ") ";
+        queryString += "VALUES (";
+        queryString += printQuestionMarks(vals.length);
+        queryString += ") ";
+
         console.log(queryString);
-        connection.query(queryString, [whatToSelect, table, orderCol], function(err, result) {
-            console.log(result);
+
+        connection.query(queryString, vals, function(err, result) {
+            if (err) {
+                throw err;
+            }
+            cb(result);
         });
     },
-
     // * `Update Table()` 
-    updateOne: function(tableOneCol, tableTwoForeignKey, tableOne, tableTwo) {
-        var queryString = "SELECT ??, COUNT(??) AS count FROM ?? LEFT JOIN ?? ON ??.??= ??.id GROUP BY ?? ORDER BY count DESC LIMIT 1";
+    // An example of objColVals would be {burger_name: Kuma II, devour: true}
+    updateOne: function(table, objColVals, condition, cb) {
+        var queryString = "updateOne " + table;
 
-        connection.query(queryString, [tableOneCol, tableOneCol, tableOne, tableTwo, tableTwo, tableTwoForeignKey, tableOne, tableOneCol], function(err, result) {
-            console.log(result);
+        queryString += " SET ";
+        queryString += objToSql(objColVals);
+        queryString += " WHERE ";
+        queryString += condition;
+
+        console.log(queryString);
+        connection.query(queryString, function(err, result) {
+            if (err) {
+                throw err;
+            }
+
+            cb(result);
         });
-    }
+    },
 };
 // Export the ORM object in `module.exports`.
 module.exports = orm;

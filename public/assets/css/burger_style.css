@@ -1,0 +1,19 @@
+li {
+    padding: 5px;
+    margin: 5px;
+    background: #faebd7;
+}
+
+.label {
+    font-weight: bold;
+}
+
+.insertOne-updateOne-form {
+    padding: 5px;
+    margin: 5px;
+    background: #E2C1AE;
+}
+
+.form-group {
+    margin-bottom: 5px;
+}

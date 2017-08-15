@@ -1,1 +1,56 @@
- <button type="button">{{button}}</button> 
+<h1>Welcome to Giggle Burgers!</h1>
+
+<h2>Your Burger is Ready!</h2>
+
+<ul>
+  {{#each burgers}}
+    {{#unless this.devour}}
+      <li>
+        {{this.burger_name}}
+
+        <form action="/{{this.id}}?_method=PUT" method="POST">
+          <input type="hidden" burger_name="devour" value="true">
+          <button type="submit">Feed Me Now!</button>
+        </form>
+
+        {{> burgers/deleteOne-burger}}
+      </li>
+    {{/unless}}
+  {{/each}}
+</ul>
+
+<h2>Would You like Order One of Our Devoured Burgers?</h2>
+
+<ul>
+  {{#each burgers}}
+    {{#if this.devour}}
+      <li>
+        {{this.burger_name}}
+
+        <form action="/{{this.id}}?_method=PUT" method="POST">
+          <input type="hidden" burger_name="devour" value="false">
+          <button type="submit">Lets Eat!</button>
+        </form>
+
+        {{> burgers/deleteOne-burger}}
+      </li>
+    {{/if}}
+  {{/each}}
+</ul>
+
+<h2>insertOne Your Own Burger</h2>
+<form class="insertOne-updateOne-form" action="/" method="POST">
+
+  <div class="form-group">
+    <label for="burger"> Name Your Burger:</label>
+    <input type="text" id="burger" burger_name="burger_name">
+  </div>
+
+  <div class="form-group">
+    <label for="add">Status?</label><br>
+    <input type="radio" burger_name="devour" value="1" checked> Devour Now!<br>
+    <input type="radio" burger_name="devour" value="0"> Just Get it Ready. Please
+  </div>
+
+  <button type="submit">Add burger</button>
+</form>

@@ -1,4 +1,4 @@
-
 INSERT INTO burgers (burger_name) VALUES ('Bandera');
-INSERT INTO burgers (burger_name) VALUES ('Peppermint Stick');
-INSERT INTO burgers (burger_name) VALUES ('Culvers');
+INSERT INTO burgers (burger_name) VALUES ('Kuma');
+INSERT INTO burgers (burger_name, devour) VALUES ('Edzo', true);
+INSERT INTO burgers (burger_name) VALUES ('M Burger');
