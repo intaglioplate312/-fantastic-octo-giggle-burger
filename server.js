@@ -1,10 +1,15 @@
 // dependencies
 var express = require('express');
-var methodOverride = require('method-override');
+var exphbs = require("express-handlebars");
 var bodyParser = require('body-parser');
+var methodOverride = require('method-override');
 
 var PORT = process.env.PORT || 8080;
 var app = express();
+
+
+// Serve static content for the app from the "public" directory in the application directory.
+app.use(express.static("public"));
 
 // create application/json parser allows Express app to handle data parsing
 app.use(bodyParser.json());
@@ -16,14 +21,11 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 app.use(methodOverride('X-HTTP-Method-Override'))
 
 // Set Handlebars.
-var exphbs = require("express-handlebars");
-
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 // Import routes and give the server access to them.
-var routes = require("./controllers/burgers_controller.js");
-
+var routes = require('./controllers/burgers_controller.js');
 app.use("/", routes);
 
 // Starts the server to begin listening
