@@ -6,7 +6,7 @@ var orm = require("../config/orm.js");
 // Create the code that will call the ORM functions using burger specific input for the ORM.
 var burgers = {
     all: function(cb) {
-        orm.aselectAll("burgers", "id", "DESC", function(res) {
+        orm.selectAll("burgers", "id", "DESC", function(res) {
             cb(res);
         });
     },

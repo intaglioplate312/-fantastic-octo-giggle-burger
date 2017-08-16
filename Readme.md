@@ -197,3 +197,11 @@ If you have any questions about this project or the material we have covered, pl
 ## Copyright
 
 Coding Boot Camp (C) 2016. All Rights Reserved.
+
+
+========================================================
+background image downloaded from www.subtlepatterns.com 
+ If you need more, that's where to get'em.
+ ========================================================
+ 
+ 
