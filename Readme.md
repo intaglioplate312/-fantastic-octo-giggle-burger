@@ -1,5 +1,5 @@
 
-# Fantastic Giggle Burger is a restaurant app that lets users input the names of burger they'd like to eat.
+## Fantastic Giggle Burger is a restaurant app that lets users input the names of burger they'd like to eat.
 
 * Whenever a user submits a burger's name, the app will display the burger on the left side of the page -- waiting to be gobbled up.
 
@@ -8,7 +8,7 @@
 
 ### Fantastic Giggle Burger is Node Express Handlebars APP
 
-### NPM Packages Used: 
+#### NPM Packages Used: 
 * Node Express
 * Express Handlebars
 * method-override
@@ -55,7 +55,7 @@
 ```
 
 
-# Background image downloaded from www.subtlepatterns.com 
-# Fantastic Giggle Burger Logo copyright H. Smith all right reserverd.
+##### Background image downloaded from www.subtlepatterns.com 
+##### Fantastic Giggle Burger Logo copyright H. Smith all right reserverd.
  
  
