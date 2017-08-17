@@ -18,8 +18,6 @@
 
 #### Directory structure
 
-All the recommended files and directories from the steps above should look like the following structure:
-
 ```
 .
 ├── config
@@ -57,7 +55,7 @@ All the recommended files and directories from the steps above should look like 
 ```
 
 
-### Background image downloaded from www.subtlepatterns.com 
-### Fantastic Giggle Burger Logo copyright H. Smith all right reserverd.
+# Background image downloaded from www.subtlepatterns.com 
+# Fantastic Giggle Burger Logo copyright H. Smith all right reserverd.
  
  
